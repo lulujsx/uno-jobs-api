@@ -14,14 +14,14 @@ class JobListing extends Model
     }
 
     protected $fillable = [
-    'title',
-    'company',
-    'seniority',
-    'modality',
-    'location',
-    'technologies',
-    'external_url',
-    'status',
-    'description',
-];
+        'title',
+        'company',
+        'seniority',
+        'modality',
+        'location',
+        'technologies',
+        'external_url',
+        'status',
+        'description',
+    ];
 }

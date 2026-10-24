@@ -2,9 +2,9 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\JobListing;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
-use App\Models\JobListing;
 
 class JobListingsStats extends StatsOverviewWidget
 {
@@ -13,22 +13,22 @@ class JobListingsStats extends StatsOverviewWidget
         return [
             Stat::make(
                 'Ofertas pendientes',
-                JobListing::where('status', 'pending')->count()    
+                JobListing::where('status', 'pending')->count()
             )
-            ->description('Esperando moderación')
-            ->color('warning'),
+                ->description('Esperando moderación')
+                ->color('warning'),
             Stat::make(
                 'Ofertas publicadas',
                 JobListing::where('status', 'published')->count()
             )
-            ->description('Visibles en UNO Jobs')
-            ->color('success'),
+                ->description('Visibles en UNO Jobs')
+                ->color('success'),
             Stat::make(
                 'Ofertas rechazadas',
                 JobListing::where('status', 'rejected')->count()
             )
-            ->description('No visibles públicamente')
-            ->color('danger'),
+                ->description('No visibles públicamente')
+                ->color('danger'),
         ];
     }
 }

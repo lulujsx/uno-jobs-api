@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\JobListing;
+use Illuminate\Http\Request;
 
 class JobListingController extends Controller
 {
@@ -22,10 +22,9 @@ class JobListingController extends Controller
             $query->where('seniority', $seniority);
         }
 
-        if($modality) {
-            $query->where('modality',$modality);
+        if ($modality) {
+            $query->where('modality', $modality);
         }
-
 
         return response()->json(
             $query

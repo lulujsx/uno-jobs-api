@@ -2,15 +2,15 @@
 
 namespace App\Filament\Resources\JobListings\Tables;
 
+use App\Models\JobListing;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Filament\Actions\Action;
 use Filament\Notifications\Notification;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
-use App\Models\JobListing;
+use Filament\Tables\Table;
 
 class JobListingsTable
 {
@@ -75,7 +75,7 @@ class JobListingsTable
                             ->send();
                     })
                     ->visible(fn (JobListing $record): bool => $record->status === 'pending'),
-                    Action::make('reject')
+                Action::make('reject')
                     ->label('Rechazar')
                     ->requiresConfirmation()
                     ->action(function (JobListing $record) {

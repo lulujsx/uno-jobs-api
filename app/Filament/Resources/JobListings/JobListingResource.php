@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 class JobListingResource extends Resource
 {
     protected static ?string $model = JobListing::class;
+
     protected static ?string $recordTitleAttribute = 'title';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

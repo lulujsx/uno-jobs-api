@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('job_listings', function (Blueprint $table) {
-            $table->text('description')->nullable(); //añade la columna description
+            $table->text('description')->nullable(); // añade la columna description
         });
     }
 
@@ -22,9 +22,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('job_listings', function (Blueprint $table) {
-            $table->dropColumn('description'); //elimina solamente la columna description
+            $table->dropColumn('description'); // elimina solamente la columna description
         });
     }
 };
 
-//Schema::dropIfExists('job_listings') elimina la tabla completa
+// Schema::dropIfExists('job_listings') elimina la tabla completa
